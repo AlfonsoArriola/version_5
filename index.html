@@ -37,13 +37,62 @@
         .container{
           display: flex;
           flex-direction: column;
-          padding: 1rem 7rem;
+        }
+
+        .nav{
+          height: 6rem;
+          position:fixed;
+          top: -1px;
+        } 
+
+        .nav button{
+          background: black;
+          opacity: 0.5;
+          color: white;
+          font-size: 1.4em;
+          width: 7rem;
+          height: 5.5rem;
+          border-radius: 0px 0px 15px;
+        }
+
+        amp-sidebar{
+          background:rgba(255,255,255);
+          width: 23%;
+        }
+        amp-sidebar ul{
+          list-style-type: none;
+          font-size: 1.4em;
+        }
+
+        amp-sidebar li{
+          margin: 2rem 0rem;
+        }
+
+        amp-sidebar a{
+          text-decoration: none;
+          color: blue;
+        }
+
+        amp-sidebar a:visited{
+          text-decoration: none;
+          color: #00a357;
+          transition: .
+        }
+
+        amp-sidebar a:hover{
+          text-decoration: none;
+          fill: white;
+          color: #fff;
+          text-shadow: 0 0 5px coral, 0 0 10px coral, 0 0 20px coral, 0 0 30px white, 0 0 40px coral, 0 0 55px coral, 0 0 75px coral;
+          transition: 0.14s;
+          transition-timing-function: ease-out;
         }
 
         h1{
           font-size: 8em;
           line-height: .9;
           font-family: 'Sail', cursive;
+          text-align: center;
         }
 
         h2{
@@ -57,6 +106,9 @@
 
         .banner{
           height: 22rem;
+         /* background-image: url('images/pancakes.png');
+          background-repeat: no-repeat;
+          background-position: 95% -5%;*/
         }
 
         .skill_set{
@@ -64,6 +116,9 @@
           width: 100%;
           font-size: 1.4em;
           line-height: 40px;
+        /*  background-image: url('images/pancakes.png');
+          background-repeat: no-repeat;*/
+         /* background: yellow;*/
         }
 
         .skill_set h2{
@@ -76,21 +131,17 @@
           display: inline-block;
         }
 
-        .skill_set amp-img{
-        /*  padding: 3px 2px 0px 2px;*/
-        }
-
         .project{
-  
-         height: 44rem;
+         height: 50rem;
          width: 100%;
         /* display: block;*/
-         padding: 2rem;
+         
         }
 
         .project amp-img{
           float: right;
-          margin: 1rem;
+          margin-right: 11rem;
+          margin-bottom: 2rem;
           opacity: .4;
           transition: 0.55s;
           transition-timing-function: ease-out;
@@ -103,7 +154,7 @@
         }
 
         .project ul{
-          margin-top: 5rem;
+          padding: 3rem 1rem 0rem 11rem;
           list-style-image: url('images/angle_blue.png');
         }
          
@@ -111,11 +162,10 @@
           margin: 1rem 0rem;
         }
 
-        .links{
-          /*display: block;*/
-        /*  padding: 1rem 40rem 1rem 3rem;*/
-          margin: 2.5rem;
-          height: 6rem;
+        .links{  
+          padding: 1rem;
+          margin: 2.5rem 8rem;
+          height: 8rem;
           width: 100%;
         }
 
@@ -149,12 +199,37 @@
           border: 10px solid coral;
         }
 
+        .bakery amp-img{
+          border: 10px solid gold;
+        }
+
+        .jay_todo amp-img{
+          border: 10px solid black;
+        }
+
         .contact{
           width: 100%;
-          height: 22rem;
+          height: 17rem;
           display: block;
-          margin-top: 8rem;
           padding-top: 7rem;
+          display: inline-block;          
+        }
+
+        .left{
+        width: 50%;
+        height: 100%;
+        float: left;
+        -webkit-clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+          clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+          background-image: url('images/painting.jpg');
+          background-size: cover;
+          background-position: center;
+        }
+        .right{
+          width: 50%;
+          height: 100%;
+          float: right;
+          text-align: center;
         }
 
         .contact a:link, a:visited {
@@ -172,8 +247,7 @@
         .contact a:hover, a:active {
             background-color: #2e78b6;
             color: white;
-            border-radius: 50%;
-           
+            border-radius: 50%;          
         }
 
         @media screen and (max-width: 1200px) {
@@ -182,12 +256,11 @@
           }
 
            h3{
+            font-size: 1.7em;
           }
-          font-size: 1.7em;
-        }
 
-          .container{
-            padding: 1rem 5rem;
+          .project ul{
+            padding: 3rem 1rem 0rem 4rem;
           }
         }
 
@@ -197,7 +270,6 @@
           }
 
            .project amp-img{
-            float: none;
             margin: 1rem;
             opacity: .4;
             transition: 0.55s;
@@ -211,6 +283,10 @@
           .site{
             display: block;
           }
+
+          .git{
+            display: block;
+          }
         }
 
         @media screen and (max-width: 600px) {
@@ -220,7 +296,6 @@
             line-height: 40px;
           }
            .skill_set li{
-            color: black;
         /*    font-size: .8em;*/
             display: inline-block;
           }
@@ -247,16 +322,30 @@
       
   </head>
   <body>
-   
-  
-<div class="container">
+   <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
+      <ul>
+        <li><a href="#fc" on="tap:fc.scrollTo">Fresh City</a></li>
+        <li><a href="#ap" on="tap:ap.scrollTo">Admin. Panel</a></li>
+        <li><a href="#jztd" on="tap:jzto.scrollTo"> REACT: Todo app</a></li>
+        <li><a href="#bake" on="tap:bake.scrollTo">Bakery</a></li>
+        <li><a href="#cb" on="tap:cb.scrollTo">Pokémon Gym</a></li>
+        <li><a href="#reach_me" on="tap:reach_me.scrollTo">Contact</a></li>
+      </ul>
+    </amp-sidebar>
+
+
+  <!-- ++++++++++++++++++++   Container  +++++++++++++++++++++++++ -->
+  <div class="nav">
+     <button on='tap:sidebar1.toggle'> Hi!</button>
+  </div>
       <div class="banner">
           <h1> Alfonso  Arriola </h1>       
-            <h3> <u> Software Engineer </u></h3>            
+            <h3> <u> Full Stack Software Engineer </u></h3>            
       </div>
-
       <div class="skill_set">
         <h2> - Skills - </h2>
+    <!--        <amp-img src="images/pancakes.png" alt="Welcome" width="100"
+  height="150"></amp-img> -->
         <ul>
           <li> HTML <amp-img src="images/html.png" alt="Welcome" width="16"
   height="16"></amp-img> |</li>
@@ -290,11 +379,19 @@
   height="16"></amp-img> |</li>
           <li> Git Hub <amp-img src="images/git.png" alt="Welcome" width="16"
   height="16"></amp-img> |</li>
+          <li> Google AMP <amp-img src="images/amp.png" alt="Welcome" width="16"
+  height="16"></amp-img> |</li>
+          <li> Google Analytics <amp-img src="images/gnl.png" alt="Welcome" width="16"
+  height="16"></amp-img> |</li>
+          <li> JAVA <amp-img src="images/java.png" alt="Welcome" width="16"
+  height="16"></amp-img> |</li>
+          <li> Sinatra <amp-img src="images/sinatra.png" alt="Welcome" width="16"
+  height="16"></amp-img> |</li>
           <li> Active Record </li>
         </ul>
       </div>
-
-      <div class="project fresh">
+<!--  /////////   Projects   \\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+      <div class="project fresh" id="fc">
         <h3> <u> Directory: </u>
           <br>
            <i>Fresh City</i>
@@ -319,7 +416,54 @@
            <a href="https://github.com/AlfonsoArriola/Fresh_City" class="git">Github</a>
          </div>             
       </div>
-      <div class="project panel">
+
+       <div class="project jay_todo" id="jztd">
+        <h3> <u> REACT APP: </u>
+          <br>
+           <i> Jay-Z To Do List</i>
+        </h3>
+        <div class="img_frame"> 
+           <amp-img src="images/jay_todo.jpg"
+              width="400"
+              height="250"
+              >
+         </amp-img>
+        </div>
+         <ul>
+           <li> Built with React.js </li>
+           <li> Responsive </li>           
+         </ul> 
+         <div class="links">
+           <a href="https://floating-lowlands-17827.herokuapp.com/" class="site">Website</a>
+           <a href="https://github.com/AlfonsoArriola/Bakery_website" class="git">Github</a>
+         </div>             
+      </div>
+
+      <div class="project bakery" id="bake">
+        <h3> <u> Store: </u>
+          <br>
+           <i> The Sweet Spot</i>
+        </h3>
+        <div class="img_frame"> 
+           <amp-img src="images/bakery.jpg"
+              width="400"
+              height="250"
+              >
+         </amp-img>
+        </div>
+         <ul>
+           <li> Built with Ruby & Sinatra </li>
+           <li> Materilize for styling </li>
+           <li> Mailman for sending e-mails </li>
+           <li> Video background </li>           
+         </ul> 
+         <div class="links">
+           <a href="https://floating-lowlands-17827.herokuapp.com/" class="site">Website</a>
+           <a href="https://github.com/AlfonsoArriola/Bakery_website" class="git">Github</a>
+         </div>             
+      </div>
+
+      <div class="project panel" id="ap">
         <h3> <u> Administration Panel: </u>
           <br>
            <i> Bronx School Of Coding </i>
@@ -341,8 +485,10 @@
                <a href="https://pams-panel.herokuapp.com/" class="site">Website</a>
                <a href="https://github.com/AlfonsoArriola/Pams_panel_x" class="git">Github</a>
             </div> 
+         </div>
       </div>
-      <div class="project cherry">
+
+      <div class="project cherry" id="cb">
         <h3> 
            <i> Pokémon Gym </i>
         </h3>
@@ -359,23 +505,33 @@
              <div class="links">
                <a href="https://alfonsoarriola.github.io/Pokemon_Champions/" class="site">Website</a>
                <a href="https://github.com/AlfonsoArriola/Pokemon_Champions"class="git">Github</a>
-            </div> 
+             </div> 
+         </div>
       </div>
-      <div class="contact">
-        <h2> <u>Contact</u></h2>
-          <p>
-            alfonsoarriolajr@gmail.com
-            <br> 
+<!--  \\\\\\\\\\\\\\\\   /////////////////////////////////////////////// -->
 
-            <br>
-           
-           <br>
-           <a href="https://www.linkedin.com/in/alfonso-arriola/">Linkedin</a>
-           <br>
-          
-          </p>
+    
+ 
+
+      <div class="contact" id="reach_me">
+         <div class="left">
+         </div>
+         <div class="right">
+             <h2> <u>Contact</u></h2>
+              <p>
+                alfonsoarriolajr@gmail.com
+                <br> 
+
+                <br>
+               
+               <br>
+               <a href="https://www.linkedin.com/in/alfonso-arriola/">Linkedin</a>
+               <br>
+              
+              </p>         
+         </div>
       </div>
-
-    </div>        
+<!-- +++++++++++++  Container  +++++++++++++++++++++++ -->
+        </div>         
   </body>
 </html>

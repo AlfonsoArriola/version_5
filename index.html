@@ -29,14 +29,19 @@
         /* any custom style goes here */
         body {
           margin: 0 auto;
+          padding: 0 auto;
           background-image: url();
           background-repeat: no-repeat;
           background-size: cover; 
         }
 
         .container{
-          display: flex;
-          flex-direction: column;
+          margin: 0 auto;
+          padding: 0 auto;
+          display: grid;
+          width: 100%;
+          height: 100vh;
+          grid-template-columns: 1fr; 
         }
 
         .nav{
@@ -70,13 +75,11 @@
 
         amp-sidebar a{
           text-decoration: none;
-          color: blue;
         }
 
         amp-sidebar a:visited{
           text-decoration: none;
           color: #00a357;
-          transition: .
         }
 
         amp-sidebar a:hover{
@@ -92,23 +95,57 @@
           font-size: 8em;
           line-height: .9;
           font-family: 'Sail', cursive;
-          text-align: center;
         }
 
         h2{
           font-size: 2.2rem;
+          margin: 0 auto;
+          padding: 0 auto;
         }
 
-        h3{
-          font-size: 2em;
-          text-align: center;
+        h5{
+          margin: 0 auto;
+          padding: 0 auto;
         }
+
 
         .banner{
           height: 22rem;
-         /* background-image: url('images/pancakes.png');
-          background-repeat: no-repeat;
-          background-position: 95% -5%;*/
+          text-align: center;
+        }
+
+        .about{
+          height: 22rem;
+          padding: 2rem 3rem;
+          background: black;
+          color: white;
+        }
+
+        .about p{
+          text-indent: 50px;
+          line-height: 30px;
+        }
+
+        .about p::first-letter { 
+            font-size: 170%;
+        }
+        .about a:link, a:visited, a:active{
+          background-color: coral;
+          color: black;
+          padding: 14px 25px;
+          text-align: center;
+          text-decoration: none;
+          transition: 0.35s; 
+          margin: 1rem;
+          width: 4.5rem;
+          display: block;
+        }
+
+        .about a:hover, a:visited{
+          background: #4cffbd;
+          color: black;
+          border-radius: 50%;
+         
         }
 
         .skill_set{
@@ -116,13 +153,15 @@
           width: 100%;
           font-size: 1.4em;
           line-height: 40px;
-        /*  background-image: url('images/pancakes.png');
-          background-repeat: no-repeat;*/
-         /* background: yellow;*/
+          padding: 2rem 3rem;
         }
 
         .skill_set h2{
           text-align: center;
+        }
+
+        .skill_set ul{
+          padding: 0rem 1rem;
         }
 
         .skill_set li{
@@ -132,59 +171,65 @@
         }
 
         .project{
-         height: 50rem;
+         height: 36rem;
          width: 100%;
-        /* display: block;*/
-         
+         display: grid;
+         grid-template-columns: auto auto;
         }
 
-        .project amp-img{
-          float: right;
-          margin-right: 11rem;
-          margin-bottom: 2rem;
+        .details{
+          display: grid;
+          justify-content: center;
+        }
+
+        .img_frame{
+          display: grid;
+          justify-content: center;
+          padding:1rem;
+        }
+
+        .img_frame h3{
+        text-align: center;
+          
+        }
+
+        .project amp-img{ 
           opacity: .4;
           transition: 0.55s;
           transition-timing-function: ease-out;
         }
 
         .project amp-img:hover {
-          transform: scale(1.05);
+          transform: scale(1.09);
           border: none;
           opacity: initial;
         }
 
         .project ul{
-          padding: 3rem 1rem 0rem 11rem;
           list-style-image: url('images/angle_blue.png');
-        }
-         
+          padding: 0rem;
+        }  
+
         .project li{
           margin: 1rem 0rem;
-        }
+        } 
 
-        .links{  
-          padding: 1rem;
-          margin: 2.5rem 8rem;
-          height: 8rem;
-          width: 100%;
-        }
-
-        .links a:link, a:visited {
+        .project a:link, a:visited {
           background-color: coral;
           color: black;
           padding: 14px 25px;
           text-align: center;
           text-decoration: none;
-          /*display: inline-block;*/
+          display: inline-block;
           transition: 0.35s; 
-          margin: 1rem;
+          margin: 2rem ;
           width: 4.5rem;
         }
 
-        .links a:hover, a:active {
-            background-color: green;
-            color: white;
-            border-radius: 50%;
+        .project a:hover, a:active {
+          background: #119323;
+          color: white;
+          border-radius: 50%;
         }
 
         .fresh amp-img{
@@ -211,15 +256,16 @@
           width: 100%;
           height: 17rem;
           display: block;
-          padding-top: 7rem;
-          display: inline-block;          
+          padding: 1rem 0rem 10rem 0rem;
+          display: inline-block; 
+
         }
 
         .left{
-        width: 50%;
-        height: 100%;
-        float: left;
-        -webkit-clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+          width: 50%;
+          height: 100%;
+          float: left;
+          -webkit-clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
           clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
           background-image: url('images/painting.jpg');
           background-size: cover;
@@ -238,7 +284,6 @@
           padding: 14px 25px;
           text-align: center;
           text-decoration: none;
-          /*display: inline-block;*/
           transition: 0.35s; 
           margin: 1rem;
           width: 4.5rem;
@@ -250,34 +295,35 @@
             border-radius: 50%;          
         }
 
-        @media screen and (max-width: 1200px) {
+        @media screen and (max-width: 909px) {  
           h1{
-            font-size: 5em;
-          }
-
-           h3{
-            font-size: 1.7em;
-          }
-
-          .project ul{
-            padding: 3rem 1rem 0rem 4rem;
-          }
+          font-size: 6em;
+          line-height: .9;
         }
 
-        @media screen and (max-width: 909px) {
-           .container{
-            padding: 1rem;
-          }
+        .about{
+          height: 27rem;
+        }
 
-           .project amp-img{
-            margin: 1rem;
-            opacity: .4;
-            transition: 0.55s;
-            transition-timing-function: ease-out;
-          }
+          .project{
+             height: 44rem;
+             width: 100%;
+             display: grid;
+             grid-template-columns: 64% 36%;
+            }
+          .project ul{
+            list-style-image:none;
+            list-style-type:disc;
+            padding: 0rem;
+         }
+
+         .details{
+          justify-content: left;
+          padding-left: 1.5rem;
+         }
 
           .links{
-            margin: .5rem;
+             margin: .5rem;
           }
 
           .site{
@@ -290,25 +336,53 @@
         }
 
         @media screen and (max-width: 600px) {
-            .skill_set{
+         h1{
+          font-size: 4em;
+        }
+
+        .about{
+          height: 33rem;
+        }
+          .project{
+            height: 50rem;
+            width: 100%;
+             display: grid;
+             grid-template-columns: auto;
+        }
+
+          .project amp-img{
+           border: none;
+           opacity: initial; 
+           transition: none;  
+        }
+
+        .project amp-img:hover {
+           transform: scale(0); 
+        }
+
+        .skill_set{
             height: 25rem;
             font-size: 1.1em;
             line-height: 40px;
-          }
+        }
            .skill_set li{
-        /*    font-size: .8em;*/
+            font-size: .8em;
             display: inline-block;
-          }
+        }
         }
 
          @media screen and (max-width: 444px) {
             .skill_set{
             display: none;
           }
-
            .project{
             height: 52rem;
            }
+
+           .project a:link, a:visited {
+    
+          display: block;
+        }
 
             .links a:link, a:visited {
             padding: 10px 20px;
@@ -316,6 +390,27 @@
             transition: 0.35s; 
             margin: 2.5rem 2rem;
           }
+
+            .nav button{
+            background: black;
+            opacity: 0.5;
+            color: white;
+            font-size: 1em;
+            width: 5rem;
+            height: 3.5rem;
+            border-radius: 0px 0px 15px;
+            z-index: 9000;
+        }
+
+            amp-sidebar{
+            background:rgba(255,255,255);
+            width: 58%;
+        }
+
+            amp-img{
+            z-index: 1;
+        }
+
         }
 
       </style>
@@ -335,6 +430,7 @@
 
 
   <!-- ++++++++++++++++++++   Container  +++++++++++++++++++++++++ -->
+<div class="container">
   <div class="nav">
      <button on='tap:sidebar1.toggle'> Hi!</button>
   </div>
@@ -342,177 +438,205 @@
           <h1> Alfonso  Arriola </h1>       
             <h3> <u> Full Stack Software Engineer </u></h3>            
       </div>
-      <div class="skill_set">
+
+      <div class="about">
+        <p>  
+          Welcome!  I make web applications, front & back, specializing in <i>html</i>, <i>css</i>, <i>javascript</i>, <i>ruby</i>, & <i>ruby on rails</i>. Currently getting into <i>React</i>, because that's what all the cool kids are into, plus it is actually very intriguing.  Below is a full run down of skills I had actually used to build with, further down, some of my projects, and just under this paragraphs is a link to my résumé as a pdf file, you can check out.      
+        </p>
+
+        <br>
+          <a href="documents/developer_al_fullstack.pdf">résumé</a>
+          <br>
+        <p>
+          Outside of tech, I'm a Veteran who is unabashedly into Muay Thai, tea, and 80's/90's music.
+        </p>
+       
+
+      </div>
+  <div class="skill_set">
         <h2> - Skills - </h2>
     <!--        <amp-img src="images/pancakes.png" alt="Welcome" width="100"
   height="150"></amp-img> -->
         <ul>
-          <li> HTML <amp-img src="images/html.png" alt="Welcome" width="16"
-  height="16"></amp-img> |</li>
-          <li> CSS <amp-img src="images/css.png" alt="Welcome" width="16"
-  height="16"></amp-img> |</li>
-          <li> Javascript <amp-img src="images/js.png" alt="Welcome" width="16"
-  height="16"></amp-img> |</li>
-          <li> Jquery <amp-img src="images/jq.png" alt="Welcome" width="16"
-  height="16"></amp-img> | </li>
-          <li> Ruby <amp-img src="images/ruby.png" alt="Welcome" width="16"
-  height="16"></amp-img> |</li>
-          <li> Ruby On Rails <amp-img src="images/ror.png" alt="Welcome" width="16"
-  height="16"></amp-img> |</li>
-          <li> React.js <amp-img src="images/react.png" alt="Welcome" width="16"
-  height="16"></amp-img> | </li>
-          <li> Bootstrap <amp-img src="images/bs.png" alt="Welcome" width="16"
-  height="16"></amp-img> |</li>
-          <li> Materialize <amp-img src="images/m.png" alt="Welcome" width="16"
-  height="16"></amp-img> |</li>
-          <li> SASS/SCSS <amp-img src="images/sass.png" alt="Welcome" width="16"
-  height="16"></amp-img> |</li>
-          <li> Postgres SQL <amp-img src="images/postgreesql.png" alt="Welcome" width="16"
-  height="16"></amp-img> |</li>
-          <li> Postico <amp-img src="images/pg.png" alt="Welcome" width="16"
-  height="16"></amp-img> |</li>
-          <li> Mail Chimp <amp-img src="images/mc.png" alt="Welcome" width="16"
-  height="16"></amp-img> |</li>
-          <li> Postman <amp-img src="images/pm.png" alt="Welcome" width="16"
-  height="16"></amp-img> |</li>
-          <li> Heroku <amp-img src="images/heroku.png" alt="Welcome" width="16"
-  height="16"></amp-img> |</li>
-          <li> Git Hub <amp-img src="images/git.png" alt="Welcome" width="16"
-  height="16"></amp-img> |</li>
-          <li> Google AMP <amp-img src="images/amp.png" alt="Welcome" width="16"
-  height="16"></amp-img> |</li>
-          <li> Google Analytics <amp-img src="images/gnl.png" alt="Welcome" width="16"
-  height="16"></amp-img> |</li>
-          <li> JAVA <amp-img src="images/java.png" alt="Welcome" width="16"
-  height="16"></amp-img> |</li>
-          <li> Sinatra <amp-img src="images/sinatra.png" alt="Welcome" width="16"
-  height="16"></amp-img> |</li>
-          <li> Active Record </li>
+          <li> HTML
+          <!--  <amp-img src="images/html.png" alt="Welcome" width="16"
+  height="16"></amp-img>  -->
+          |</li>
+          <li> 
+            CSS  
+          |</li>
+          <li> Javascript 
+          |</li>
+          <li> Jquery 
+          | </li>
+          <li> Ruby
+          |</li>
+          <li> Ruby On Rails
+          |</li>
+          <li> React.js 
+          | </li>
+          <li> Bootstrap 
+          |</li>
+          <li> Materialize 
+          |</li>
+          <li> SASS/SCSS 
+          |</li>
+          <li> Postgres SQL 
+          |</li>
+          <li> Postico
+          |</li>
+          <li> Mail Chimp 
+          |</li>
+          <li> Postman 
+          |</li>
+          <li> Heroku 
+          |</li>
+          <li> Git Hub 
+          |</li>
+          <li> Google AMP 
+          |</li>
+          <li> Google Analytics 
+          |</li>
+          <li> JAVA 
+          |</li>
+          <li> Sinatra 
+          |</li>
+          <li> Active Record |</li>
+          <li> File Zila</li>
         </ul>
-      </div>
+  </div>
 <!--  /////////   Projects   \\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
       <div class="project fresh" id="fc">
-        <h3> <u> Directory: </u>
-          <br>
-           <i>Fresh City</i>
-        </h3>
-        <div class="img_frame"> 
+        <div class="details">           
+            <ul>
+               <h2> <u>Ruby On Rails Directory</u> <br>
+                 <i>Fresh City</i>
+               </h2>
+             <li> A directory of free & cheap showers in NYC </li>
+             <li> Built with Ruby On Rails</li>
+             <li> AWS for photo upload</li>
+             <li> Ruby gem <i>Devise</i> for admin only access</li>
+             <li> Ruby gem <i> i18n</i> for multi-lingual use</li>
+             <li> Postico for back-end data storage</li>
+              <a href="https://fresh-city.herokuapp.com/?class=nav-link&locale=en" class="site">Website</a>
+              <a href="https://github.com/AlfonsoArriola/Fresh_City" class="git">Github</a>
+           </ul> 
+          
+        </div>
+        
+        <div class="img_frame">    
            <amp-img src="images/freshcity.jpg"
               width="400"
               height="250"
               >
-         </amp-img>
-        </div>
-         <ul>
-           <li> A directory of free & cheap showers in NYC </li>
-           <li> Built with Ruby On Rails</li>
-           <li> AWS for photo upload</li>
-           <li> Ruby gem <i>Devise</i> for admin only access</li>
-           <li> Ruby gem <i> i18n</i> for multi-lingual use</li>
-           <li> Postico for back-end data storage</li>
-         </ul> 
-         <div class="links">
-           <a href="https://fresh-city.herokuapp.com/?class=nav-link&locale=en" class="site">Website</a>
-           <a href="https://github.com/AlfonsoArriola/Fresh_City" class="git">Github</a>
-         </div>             
+           </amp-img>
+      
+        </div>       
       </div>
 
-       <div class="project jay_todo" id="jztd">
-        <h3> <u> REACT APP: </u>
-          <br>
-           <i> Jay-Z To Do List</i>
-        </h3>
-        <div class="img_frame"> 
-           <amp-img src="images/jay_todo.jpg"
-              width="400"
-              height="250"
-              >
-         </amp-img>
-        </div>
-         <ul>
-           <li> Built with React.js </li>
-           <li> Responsive </li>           
-         </ul> 
-         <div class="links">
-           <a href="https://floating-lowlands-17827.herokuapp.com/" class="site">Website</a>
-           <a href="https://github.com/AlfonsoArriola/Bakery_website" class="git">Github</a>
-         </div>             
-      </div>
+      <div class="project jay_todo" id="jztd">
+          <div class="details">
+              <ul>
+                <h2> <u> React App</u> 
+                  <br>
+                 <i> Jay-Z To Do List </i>
+                </h2>
+                 <li> Built with React.js </li>
+                 <li> Responsive </li> 
+                   <a href="https://floating-lowlands-17827.herokuapp.com/" class="site">Website</a>
+                   <a href="https://github.com/AlfonsoArriola/Bakery_website" class="git">Github</a>          
+               </ul> 
+          </div>
+
+          <div class="img_frame"> 
+             <amp-img src="images/jay_todo.jpg"
+                width="400"
+                height="250"
+                >
+             </amp-img>
+          </div>             
+       </div>
+    
 
       <div class="project bakery" id="bake">
-        <h3> <u> Store: </u>
-          <br>
-           <i> The Sweet Spot</i>
-        </h3>
+        <div class="details">
+           <ul>
+            <h2> 
+              <u> Ruby/Sinatra: Bakery</u> 
+                  <br>
+                 <i> The Sweet Spot </i>
+            </h2>
+             <li> Built with Ruby & Sinatra </li>
+             <li> Materilize for styling </li>
+             <li> Mailman for sending e-mails </li>
+             <li> Video background </li>
+             <a href="https://floating-lowlands-17827.herokuapp.com/" class="site">Website</a>
+             <a href="https://github.com/AlfonsoArriola/Bakery_website" class="git">Github</a>           
+           </ul> 
+        </div>
+  
         <div class="img_frame"> 
            <amp-img src="images/bakery.jpg"
               width="400"
               height="250"
               >
          </amp-img>
-        </div>
-         <ul>
-           <li> Built with Ruby & Sinatra </li>
-           <li> Materilize for styling </li>
-           <li> Mailman for sending e-mails </li>
-           <li> Video background </li>           
-         </ul> 
-         <div class="links">
-           <a href="https://floating-lowlands-17827.herokuapp.com/" class="site">Website</a>
-           <a href="https://github.com/AlfonsoArriola/Bakery_website" class="git">Github</a>
-         </div>             
+        </div>           
       </div>
 
       <div class="project panel" id="ap">
-        <h3> <u> Administration Panel: </u>
-          <br>
-           <i> Bronx School Of Coding </i>
-        </h3> 
-         <div class="img_frame"> 
-            <amp-img src="images/panel.jpg"
-              width="400"
-              height="250"           
-              ></amp-img>
-              <ul>
+        <div class="details">
+           <ul>
+            <h2> 
+              <u> Ruby On Rails: Admin. Panel </u> 
+                  <br>
+                 <i> Bronx School Of Coding  </i>
+            </h2>
                <li> An admin school panel </li>
                <li> Built with Ruby On Rails</li>
                <li> Creates, Updates, Edits, & Deletes <br>
                 records for Teachers, Students, Courses, & Classes. </li>
                <li> Ruby gem <i>Devise</i> for admin only access</li>
                <li> Postico for back-end data storage</li>
-             </ul> 
-             <div class="links">
-               <a href="https://pams-panel.herokuapp.com/" class="site">Website</a>
-               <a href="https://github.com/AlfonsoArriola/Pams_panel_x" class="git">Github</a>
-            </div> 
+                <a href="https://pams-panel.herokuapp.com/" class="site">Website</a>
+                <a href="https://github.com/AlfonsoArriola/Pams_panel_x" class="git">Github</a> 
+            </ul>           
+        </div>
+        
+         <div class="img_frame"> 
+            <amp-img src="images/panel.jpg"
+              width="400"
+              height="250"           
+              ></amp-img>
          </div>
       </div>
 
       <div class="project cherry" id="cb">
-        <h3> 
-           <i> Pokémon Gym </i>
-        </h3>
-         <div class="img_frame">  
+        <div class="details">
+          <ul>
+             <h2> 
+              <u> Jquery/Ajax: Web App.</u> 
+                  <br>
+                 <i> Pokémon Gym </i>
+            </h2>
+             <li> Makes a GET request to pokeapi.co API </li>
+             <li> uses Jquery/Ajax </li>
+             <li> Responsive </li>
+               <a href="https://alfonsoarriola.github.io/Pokemon_Champions/" class="site">Website</a>
+               <a href="https://github.com/AlfonsoArriola/Pokemon_Champions"class="git">Github</a>
+           </ul> 
+        </div>
+        
+        <div class="img_frame">  
           <amp-img src="images/cherrybomb.jpg"
               width="400"
               height="250"         
               ></amp-img>
-                <ul>
-                 <li> Makes a GET request to pokeapi.co API </li>
-                 <li> uses Jquery/Ajax </li>
-                 <li> Responsive </li>
-               </ul> 
-             <div class="links">
-               <a href="https://alfonsoarriola.github.io/Pokemon_Champions/" class="site">Website</a>
-               <a href="https://github.com/AlfonsoArriola/Pokemon_Champions"class="git">Github</a>
-             </div> 
-         </div>
+        </div>
       </div>
 <!--  \\\\\\\\\\\\\\\\   /////////////////////////////////////////////// -->
 
-    
- 
-
+  
       <div class="contact" id="reach_me">
          <div class="left">
          </div>
@@ -531,7 +655,9 @@
               </p>         
          </div>
       </div>
+ 
 <!-- +++++++++++++  Container  +++++++++++++++++++++++ -->
-        </div>         
+        </div>
+
   </body>
 </html>

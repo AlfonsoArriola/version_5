@@ -27,12 +27,16 @@
 
      <style amp-custom>
         /* any custom style goes here */
+
+        /**, *::before, *::after{box-sizing: border-box}*/
         body {
           margin: 0 auto;
           padding: 0 auto;
           background-image: url();
           background-repeat: no-repeat;
           background-size: cover; 
+          font-size: 1.3em;
+          color: #24231d;
         }
 
         .container{
@@ -42,6 +46,29 @@
           width: 100%;
           height: 100vh;
           grid-template-columns: 1fr; 
+        }
+
+        header{
+          display: none;
+          height: 3.5rem;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          background: #ffbb56;
+          z-index: 888888;
+        }
+
+        header button{
+          background: #ffbb56;
+          border: none;
+        }
+
+        header button img{
+
+        }
+         .mobile_menu{
+          color: white;
+          font-size: 1.4em;
         }
 
         .nav{
@@ -58,11 +85,13 @@
           width: 7rem;
           height: 5.5rem;
           border-radius: 0px 0px 15px;
+          z-index: 888888;
         }
 
         amp-sidebar{
-          background:rgba(255,255,255);
-          width: 23%;
+          text-align: center;
+          background: #f2eee1;
+          width: 33%;
         }
         amp-sidebar ul{
           list-style-type: none;
@@ -71,6 +100,8 @@
 
         amp-sidebar li{
           margin: 2rem 0rem;
+          padding: 1rem;
+          
         }
 
         amp-sidebar a{
@@ -92,15 +123,21 @@
         }
 
         h1{
-          font-size: 8em;
+          font-size: 6em;
           line-height: .9;
           font-family: 'Sail', cursive;
+          color: #3b9cc2;
         }
 
         h2{
           font-size: 2.2rem;
           margin: 0 auto;
           padding: 0 auto;
+        }
+
+        h3{
+          font-size: 2em;
+          color: #24231d;
         }
 
         h5{
@@ -110,15 +147,23 @@
 
 
         .banner{
-          height: 22rem;
+          height: 30rem;
           text-align: center;
+          background: #2b8ed7;
+          padding: 1rem;
+          background-image: url('images/belize.jpg');
+          background-position: center;
+        }
+
+        .banner h3{
+          color: #1d1515;
         }
 
         .about{
           height: 22rem;
           padding: 2rem 3rem;
-          background: black;
-          color: white;
+          background: #f2eee1;
+          color: #24231d;
         }
 
         .about p{
@@ -127,7 +172,7 @@
         }
 
         .about p::first-letter { 
-            font-size: 170%;
+          font-size: 170%;
         }
         .about a:link, a:visited, a:active{
           background-color: coral;
@@ -144,8 +189,7 @@
         .about a:hover, a:visited{
           background: #4cffbd;
           color: black;
-          border-radius: 50%;
-         
+          border-radius: 50%;   
         }
 
         .skill_set{
@@ -154,7 +198,37 @@
           font-size: 1.4em;
           line-height: 40px;
           padding: 2rem 3rem;
+          overflow: hidden;
         }
+
+        @keyframes animate{
+          0%{
+            opacity: 0;
+            top: -10%;
+            transform: translateX(20px) rotate(0deg);
+          }
+          10%{
+            opacity: 1;
+            top: -10%;
+          }
+          20%{
+           transform: translateX(-20px) rotate(45deg);
+          }
+          40%{
+           transform: translateX(-20px) rotate(90deg);
+          }
+          60%{
+           transform: translateX(20px) rotate(135deg);
+          }
+          80%{
+           transform: translateX(-20px) rotate(180deg);
+          }
+          100%{
+            top: 110%;
+            transform: translateX(-20px) rotate(225deg);
+          }
+        }
+          
 
         .skill_set h2{
           text-align: center;
@@ -173,6 +247,7 @@
         .project{
          height: 36rem;
          width: 100%;
+         padding: 0rem 1rem;
          display: grid;
          grid-template-columns: auto auto;
         }
@@ -182,14 +257,29 @@
           justify-content: center;
         }
 
+        .img_text{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: hotpink;
+          opacity: 0;
+          transition: opacity ease-out 25ms;
+        }
+
+        .img_text:hover{
+          opacity: 1;
+        }
+
         .img_frame{
           display: grid;
           justify-content: center;
           padding:1rem;
+          position: relative;
         }
 
         .img_frame h3{
-        text-align: center;
+         text-align: center;
           
         }
 
@@ -197,10 +287,11 @@
           opacity: .4;
           transition: 0.55s;
           transition-timing-function: ease-out;
+          width: 100%;
         }
 
         .project amp-img:hover {
-          transform: scale(1.09);
+          transform: scale(1.11);
           border: none;
           opacity: initial;
         }
@@ -233,24 +324,33 @@
         }
 
         .fresh amp-img{
-          border: 10px solid #ddd;
+          border: 15px solid #ddd;
         }
 
         .panel amp-img{
-          border: 10px solid blue;
+          border: 15px solid blue;
         }
 
         .cherry amp-img{
-          border: 10px solid coral;
+          border: 15px solid coral;
         }
 
         .bakery amp-img{
-          border: 10px solid gold;
+          border: 15px solid gold;
         }
 
         .jay_todo amp-img{
-          border: 10px solid black;
+          border: 15px solid black;
         }
+
+        .animals amp-img{
+          border: 15px solid #42cef4;
+        }
+        
+        .lebron amp-img{
+          border: 15px solid #8039d6;
+        }
+
 
         .contact{
           width: 100%;
@@ -258,7 +358,6 @@
           display: block;
           padding: 1rem 0rem 10rem 0rem;
           display: inline-block; 
-
         }
 
         .left{
@@ -295,10 +394,19 @@
             border-radius: 50%;          
         }
 
-        @media screen and (max-width: 909px) {  
+        @media screen and (max-width: 950px) { 
+
+         amp-sidebar ul{
+          list-style-type: none;
+          font-size: 1.2em;
+        } 
           h1{
           font-size: 6em;
           line-height: .9;
+        }
+
+        .banner h3{
+          color:#f2eaea;
         }
 
         .about{
@@ -318,8 +426,8 @@
          }
 
          .details{
-          justify-content: left;
-          padding-left: 1.5rem;
+           justify-content: left;
+           padding-left: 1.5rem;
          }
 
           .links{
@@ -336,12 +444,18 @@
         }
 
         @media screen and (max-width: 600px) {
+        
+
          h1{
           font-size: 4em;
         }
 
+        .banner h3{
+          color: #1d1515;
+        }
+
         .about{
-          height: 33rem;
+          height: 40rem;
         }
           .project{
             height: 50rem;
@@ -353,11 +467,12 @@
           .project amp-img{
            border: none;
            opacity: initial; 
-           transition: none;  
+           transition: none; 
+           z-index: -1; 
         }
 
         .project amp-img:hover {
-           transform: scale(0); 
+           transform: none; 
         }
 
         .skill_set{
@@ -372,6 +487,38 @@
         }
 
          @media screen and (max-width: 444px) {
+
+          header{
+            display: block;
+          }
+
+           body{
+            font-size:1em;
+           }
+
+           .nav button{
+            display: none;
+           }
+
+           h1{
+            padding-top: 2rem;
+           }
+
+           h2{
+            font-size: 1.3em;
+           }
+
+           h3{
+            font-size: 1.2em;
+           }
+
+            .banner{
+              height: 25rem;
+            }
+
+            .about{
+              height: 35rem;
+            }
             .skill_set{
             display: none;
           }
@@ -384,23 +531,26 @@
           display: block;
         }
 
+        .contact{
+          height: 4rem;
+        }
+
+
+
+        .left{
+          display: none;
+        }
+
+        .right{
+          width: 100%;
+        }
+
             .links a:link, a:visited {
             padding: 10px 20px;
             display: block;
             transition: 0.35s; 
             margin: 2.5rem 2rem;
           }
-
-            .nav button{
-            background: black;
-            opacity: 0.5;
-            color: white;
-            font-size: 1em;
-            width: 5rem;
-            height: 3.5rem;
-            border-radius: 0px 0px 15px;
-            z-index: 9000;
-        }
 
             amp-sidebar{
             background:rgba(255,255,255);
@@ -413,17 +563,21 @@
 
         }
 
+
       </style>
       
   </head>
   <body>
    <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
       <ul>
-        <li><a href="#fc" on="tap:fc.scrollTo">Fresh City</a></li>
-        <li><a href="#ap" on="tap:ap.scrollTo">Admin. Panel</a></li>
-        <li><a href="#jztd" on="tap:jzto.scrollTo"> REACT: Todo app</a></li>
-        <li><a href="#bake" on="tap:bake.scrollTo">Bakery</a></li>
-        <li><a href="#cb" on="tap:cb.scrollTo">Pokémon Gym</a></li>
+        <li><a href="#about_resume" on="tap:about.scrollTo">About/<br>Résumé</a></li>
+        <li><a href="#fc" on="tap:fc.scrollTo">Fresh City (Ruby)</a></li>
+        <li><a href="#ap" on="tap:ap.scrollTo">Admin. Panel (Ruby)</a></li>
+        <li><a href="#jztd" on="tap:jzto.scrollTo"> Todo App (React)</a></li>
+        <li><a href="#bake" on="tap:bake.scrollTo">Bakery (Ruby)</a></li>
+        <li><a href="#cb" on="tap:cb.scrollTo">Pokémon Gym (Web App)</a></li>
+        <li><a href="#lb" on="tap:cb.scrollTo">LeBron Stats (Web Page)</a></li>
+        <li><a href="#ag" on="tap:cb.scrollTo">Animal Perserve Photography (Gallery)</a></li>
         <li><a href="#reach_me" on="tap:reach_me.scrollTo">Contact</a></li>
       </ul>
     </amp-sidebar>
@@ -434,12 +588,20 @@
   <div class="nav">
      <button on='tap:sidebar1.toggle'> Hi!</button>
   </div>
+  <header>  <button class="mobile_menu" on='tap:sidebar1.toggle'> 
+      <amp-img src="images/icons8-menu.svg"
+              width="50"
+              height="50"
+              >
+           </amp-img>
+
+  </button> </header>
       <div class="banner">
           <h1> Alfonso  Arriola </h1>       
             <h3> <u> Full Stack Software Engineer </u></h3>            
       </div>
 
-      <div class="about">
+      <div class="about" id="about_resume">
         <p>  
           Welcome!  I make web applications, front & back, specializing in <i>html</i>, <i>css</i>, <i>javascript</i>, <i>ruby</i>, & <i>ruby on rails</i>. Currently getting into <i>React</i>, because that's what all the cool kids are into, plus it is actually very intriguing.  Below is a full run down of skills I had actually used to build with, further down, some of my projects, and just under this paragraphs is a link to my résumé as a pdf file, you can check out.      
         </p>
@@ -459,8 +621,6 @@
   height="150"></amp-img> -->
         <ul>
           <li> HTML
-          <!--  <amp-img src="images/html.png" alt="Welcome" width="16"
-  height="16"></amp-img>  -->
           |</li>
           <li> 
             CSS  
@@ -504,6 +664,7 @@
           <li> Active Record |</li>
           <li> File Zila</li>
         </ul>
+
   </div>
 <!--  /////////   Projects   \\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
       <div class="project fresh" id="fc">
@@ -524,7 +685,8 @@
           
         </div>
         
-        <div class="img_frame">    
+        <div class="img_frame">
+        <p class="img_text"> Stay Fresh</p>    
            <amp-img src="images/freshcity.jpg"
               width="400"
               height="250"
@@ -629,6 +791,52 @@
         
         <div class="img_frame">  
           <amp-img src="images/cherrybomb.jpg"
+              width="400"
+              height="250"         
+              ></amp-img>
+        </div>
+      </div>
+
+      <div class="project lebron" id="lb">
+        <div class="details">
+          <ul>
+             <h2> 
+              <u> Video Background: Bio Page</u> 
+                  <br>
+                 <i>  LeBron James </i>
+            </h2>
+             <li> Video Background </li>
+             <li> Responsive </li>
+             <li> Flip Card </li>
+               <a href="https://alfonsoarriola.github.io/LeBron/" class="site">Website</a>
+               <a href="https://github.com/AlfonsoArriola/LeBron" class="git">Github</a>
+           </ul> 
+        </div>
+
+        <div class="img_frame">  
+          <amp-img src="images/le_bron.png"
+              width="400"
+              height="250"         
+              ></amp-img>
+        </div>
+      </div>
+
+      <div class="project animals" id="ag">
+        <div class="details">
+          <ul>
+             <h2> 
+              <u> CSS grid: Photogallery</u> 
+                  <br>
+                 <i> James Tyrrell Photography </i>
+            </h2>
+             <li> Responsive </li>
+               <a href="https://alfonsoarriola.github.io/animal_perserve_gallery/" class="site">Website</a>
+               <a href="https://github.com/AlfonsoArriola/animal_perserve_gallery/tree/master"class="git">Github</a>
+           </ul> 
+        </div>
+        
+        <div class="img_frame">  
+          <amp-img src="images/animal_gallery.jpg"
               width="400"
               height="250"         
               ></amp-img>

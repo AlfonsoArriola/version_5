@@ -394,6 +394,11 @@
             border-radius: 50%;          
         }
 
+
+
+
+/* :::::::::::::::::::  Media Queries  :::::::::::::::::*/
+
         @media screen and (max-width: 950px) { 
 
          amp-sidebar ul{
@@ -469,6 +474,7 @@
            opacity: initial; 
            transition: none; 
            z-index: -1; 
+           width: 300px;
         }
 
         .project amp-img:hover {
@@ -488,15 +494,15 @@
 
          @media screen and (max-width: 444px) {
 
+          body{
+            font-size:1em;
+           }
+
           header{
             display: block;
           }
 
-           body{
-            font-size:1em;
-           }
-
-           .nav button{
+          .nav button{
             display: none;
            }
 
@@ -509,16 +515,18 @@
            }
 
            h3{
-            font-size: 1.2em;
+            font-size: 1.4em;
            }
 
             .banner{
-              height: 25rem;
-            }
+             height: 25rem;
+             text-align: initial;
+           }
 
             .about{
               height: 35rem;
-            }
+              padding: 2rem 5rem 2rem 3rem;
+           }
             .skill_set{
             display: none;
           }
@@ -533,6 +541,7 @@
 
         .contact{
           height: 4rem;
+          padding: 1rem 0rem 10rem 6rem;
         }
 
 
@@ -543,6 +552,7 @@
 
         .right{
           width: 100%;
+          text-align: initial;
         }
 
             .links a:link, a:visited {
@@ -554,12 +564,16 @@
 
             amp-sidebar{
             background:rgba(255,255,255);
-            width: 58%;
+            width: 68%;
         }
 
             amp-img{
             z-index: 1;
         }
+
+        }
+
+        @media screen and (max-width: 400px) {
 
         }
 
@@ -571,13 +585,13 @@
    <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
       <ul>
         <li><a href="#about_resume" on="tap:about.scrollTo">About/<br>Résumé</a></li>
-        <li><a href="#fc" on="tap:fc.scrollTo">Fresh City (Ruby)</a></li>
-        <li><a href="#ap" on="tap:ap.scrollTo">Admin. Panel (Ruby)</a></li>
+        <li><a href="#fc" on="tap:fc.scrollTo"> Fresh City (Ruby)</a></li>
+        <li><a href="#ap" on="tap:ap.scrollTo"> Admin. Panel (Ruby)</a></li>
         <li><a href="#jztd" on="tap:jzto.scrollTo"> Todo App (React)</a></li>
-        <li><a href="#bake" on="tap:bake.scrollTo">Bakery (Ruby)</a></li>
-        <li><a href="#cb" on="tap:cb.scrollTo">Pokémon Gym (Web App)</a></li>
-        <li><a href="#lb" on="tap:cb.scrollTo">LeBron Stats (Web Page)</a></li>
-        <li><a href="#ag" on="tap:cb.scrollTo">Animal Perserve Photography (Gallery)</a></li>
+        <li><a href="#bake" on="tap:bake.scrollTo"> Bakery (Ruby)</a></li>
+        <li><a href="#cb" on="tap:cb.scrollTo"> Pokémon Gym (Web App)</a></li>
+        <li><a href="#lb" on="tap:cb.scrollTo"> LeBron (Web Page)</a></li>
+        <li><a href="#ag" on="tap:cb.scrollTo"> Animal Photography (Gallery)</a></li>
         <li><a href="#reach_me" on="tap:reach_me.scrollTo">Contact</a></li>
       </ul>
     </amp-sidebar>
@@ -603,14 +617,14 @@
 
       <div class="about" id="about_resume">
         <p>  
-          Welcome!  I make web applications, front & back, specializing in <i>html</i>, <i>css</i>, <i>javascript</i>, <i>ruby</i>, & <i>ruby on rails</i>. Currently getting into <i>React</i>, because that's what all the cool kids are into, plus it is actually very intriguing.  Below is a full run down of skills I had actually used to build with, further down, some of my projects, and just under this paragraphs is a link to my résumé as a pdf file, you can check out.      
+          Welcome!  I make web applications, front & back, specializing in <i>html</i>, <i>css</i>, <i>javascript</i>, <i>ruby</i>, & <i>ruby on rails</i>. Currently getting into <i>React</i>, because of their view on the MVC model, and also, it's what the cool kids are into. Below is a link to my résumé and some of my recent projects.      
         </p>
 
         <br>
           <a href="documents/developer_al_fullstack.pdf">résumé</a>
           <br>
         <p>
-          Outside of tech, I'm a Veteran who is unabashedly into Muay Thai, tea, and 80's/90's music.
+          Outside of tech, I'm a Veteran who is unabashedly into Muay Thai, tea, community service and 80's/90's music.  Thanks again for stopping by.
         </p>
        
 
@@ -688,8 +702,8 @@
         <div class="img_frame">
         <p class="img_text"> Stay Fresh</p>    
            <amp-img src="images/freshcity.jpg"
-              width="400"
-              height="250"
+              width="320"
+              height="200" 
               >
            </amp-img>
       
@@ -712,8 +726,8 @@
 
           <div class="img_frame"> 
              <amp-img src="images/jay_todo.jpg"
-                width="400"
-                height="250"
+                width="320"
+              height="200" 
                 >
              </amp-img>
           </div>             
@@ -739,8 +753,8 @@
   
         <div class="img_frame"> 
            <amp-img src="images/bakery.jpg"
-              width="400"
-              height="250"
+              width="320"
+              height="200" 
               >
          </amp-img>
         </div>           
@@ -767,8 +781,8 @@
         
          <div class="img_frame"> 
             <amp-img src="images/panel.jpg"
-              width="400"
-              height="250"           
+              width="320"
+              height="200"           
               ></amp-img>
          </div>
       </div>
@@ -791,8 +805,8 @@
         
         <div class="img_frame">  
           <amp-img src="images/cherrybomb.jpg"
-              width="400"
-              height="250"         
+              width="320"
+              height="200"         
               ></amp-img>
         </div>
       </div>
@@ -806,8 +820,8 @@
                  <i>  LeBron James </i>
             </h2>
              <li> Video Background </li>
-             <li> Responsive </li>
              <li> Flip Card </li>
+             <li> Responsive </li>
                <a href="https://alfonsoarriola.github.io/LeBron/" class="site">Website</a>
                <a href="https://github.com/AlfonsoArriola/LeBron" class="git">Github</a>
            </ul> 
@@ -815,8 +829,8 @@
 
         <div class="img_frame">  
           <amp-img src="images/le_bron.png"
-              width="400"
-              height="250"         
+              width="320"
+              height="200"          
               ></amp-img>
         </div>
       </div>
@@ -827,8 +841,9 @@
              <h2> 
               <u> CSS grid: Photogallery</u> 
                   <br>
-                 <i> James Tyrrell Photography </i>
+                 <i> Londolozi Photography </i>
             </h2>
+             <li> Animal & Photographer info shows on hover</li>
              <li> Responsive </li>
                <a href="https://alfonsoarriola.github.io/animal_perserve_gallery/" class="site">Website</a>
                <a href="https://github.com/AlfonsoArriola/animal_perserve_gallery/tree/master"class="git">Github</a>
@@ -837,8 +852,8 @@
         
         <div class="img_frame">  
           <amp-img src="images/animal_gallery.jpg"
-              width="400"
-              height="250"         
+              width="320"
+              height="200"         
               ></amp-img>
         </div>
       </div>
@@ -866,6 +881,7 @@
  
 <!-- +++++++++++++  Container  +++++++++++++++++++++++ -->
         </div>
+
 
   </body>
 </html>
